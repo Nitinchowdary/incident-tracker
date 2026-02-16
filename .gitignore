@@ -1,0 +1,12 @@
+# Node
+frontend/node_modules
+frontend/.next
+frontend/build
+
+# Spring Boot
+backend/target
+backend/.mvn
+backend/*.log
+
+# OS
+.DS_Store
