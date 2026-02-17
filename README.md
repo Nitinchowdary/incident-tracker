@@ -2,6 +2,8 @@
 
 A full-stack web application for engineers to create, browse, filter, and manage production incidents.
 
+**Current database:** Supabase (cloud). Run the backend and frontend—no extra setup needed.
+
 ## Tech Stack
 
 | Layer | Technologies |
@@ -18,55 +20,39 @@ A full-stack web application for engineers to create, browse, filter, and manage
 
 - **Java 21**
 - **Node.js 18+** and npm
-- **PostgreSQL** (running locally or accessible)
 
-### 1. Database Setup
+### Run (Supabase – default)
 
-Create a PostgreSQL database and user:
-
-```sql
-CREATE DATABASE incident_db;
--- Or use your existing database name
-```
-
-### 2. Backend Configuration
-
-Edit `backend/src/main/resources/application.properties`:
-
-```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/incident_db
-spring.datasource.username=postgres
-spring.datasource.password=YOUR_PASSWORD
-```
-
-To disable seed data on startup:
-
-```properties
-app.seed.enabled=false
-```
-
-### 3. Run Backend
-
+**Backend:**
 ```bash
 cd backend
 ./mvnw spring-boot:run
 ```
+*(Windows: use `.\mvnw` instead of `./mvnw`)*
 
-Backend runs at **http://localhost:8080**
-
-### 4. Run Frontend
-
+**Frontend:** (in a new terminal)
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-Frontend runs at **http://localhost:5173** and proxies `/api` requests to the backend.
+That’s it. The app uses Supabase; no database setup needed.
 
-### 5. Seed Data
+### Local PostgreSQL instead
 
-On first run (with `app.seed.enabled=true`), ~200 fake incidents are seeded if the table is empty. To re-seed, drop the `incidents` table and restart the backend.
+1. Create a database in pgAdmin (or `createdb postgres`)
+2. Edit `backend/src/main/resources/application.properties` with your local credentials:
+   ```properties
+   spring.datasource.url=jdbc:postgresql://localhost:5432/postgres
+   spring.datasource.username=postgres
+   spring.datasource.password=YOUR_LOCAL_PASSWORD
+   ```
+3. Run the backend—it will automatically pre-seed the database.
+
+---
+
+**Backend:** http://localhost:8080 | **Frontend:** http://localhost:5173 (proxies `/api` to backend)
 
 ---
 
