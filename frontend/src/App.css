@@ -1,0 +1,400 @@
+.app {
+  min-height: 100vh;
+  padding: 1.5rem 2rem;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: #2563eb;
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit;
+  text-decoration: underline;
+}
+
+.btn-link:hover {
+  color: #1d4ed8;
+}
+
+.btn-secondary {
+  background: transparent;
+  border-color: #64748b;
+  color: inherit;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #f1f5f9;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 180px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: inherit;
+}
+
+.filters select {
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: inherit;
+}
+
+/* Table */
+.table-wrapper {
+  position: relative;
+}
+
+.table-wrapper.table-loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+
+.incident-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.incident-table th,
+.incident-table td {
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.incident-table th {
+  font-weight: 600;
+  background: #f8fafc;
+}
+
+.incident-table a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.incident-table a:hover {
+  text-decoration: underline;
+}
+
+.incident-table .summary-cell {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.severity-sev1 { background: #fecaca; color: #991b1b; }
+.severity-sev2 { background: #fed7aa; color: #9a3412; }
+.severity-sev3 { background: #fef08a; color: #854d0e; }
+.severity-sev4 { background: #bbf7d0; color: #166534; }
+
+.status-open { background: #fef3c7; color: #92400e; }
+.status-mitigated { background: #dbeafe; color: #1e40af; }
+.status-resolved { background: #d1fae5; color: #065f46; }
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.pagination button {
+  padding: 0.4rem 0.8rem;
+}
+
+/* Form */
+.incident-form {
+  max-width: 500px;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: inherit;
+}
+
+.form-actions {
+  margin-top: 1.5rem;
+}
+
+/* Detail */
+.detail-grid dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1.5rem;
+}
+
+.detail-grid dt {
+  font-weight: 500;
+  color: #64748b;
+}
+
+.detail-grid dd {
+  margin: 0;
+}
+
+.detail-grid code {
+  font-size: 0.85em;
+  background: #f1f5f9;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+.status-select {
+  width: auto;
+  padding: 0.25rem 0.5rem;
+}
+
+.summary-block {
+  margin-top: 0.5rem;
+}
+
+.summary-block label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.summary-block textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.summary-block h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.summary-block p {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* States */
+.loading,
+.empty,
+.error {
+  padding: 1rem;
+  text-align: center;
+}
+
+.error {
+  color: #dc2626;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal {
+  background: #ffffff;
+  border-radius: 8px;
+  max-width: 500px;
+}
+
+.modal.modal-detail {
+  max-width: 560px;
+  width: 100%;
+  min-width: 0;
+  max-height: 90vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.modal::-webkit-scrollbar {
+  display: none;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  color: #64748b;
+}
+
+.modal-close:hover {
+  color: #213547;
+}
+
+.modal .incident-form,
+.modal .error,
+.modal .detail-modal-content,
+.modal .loading {
+  padding: 1rem 1.25rem;
+}
+
+.detail-modal-two-col,
+.incident-form-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 1.5rem;
+}
+
+.incident-form-two-col .form-group-full {
+  grid-column: 1 / -1;
+}
+
+.detail-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.detail-field dt,
+.detail-field dd {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.detail-field dt {
+  font-weight: 500;
+  color: #64748b;
+}
+
+.detail-field-full {
+  grid-column: 1 / -1;
+}
+
+.modal .incident-form {
+  min-width: 0;
+}
+
+.modal .form-group input,
+.modal .form-group select,
+.modal .form-group textarea {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.modal .form-group textarea {
+  resize: vertical;
+}
+
+.modal .form-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
